@@ -1,4 +1,4 @@
-==Learn-Rails README
+Learn-Rails README
 ------------------
 
 Working through the Learn-Rails book that accompanies the RailsApp Project. 
