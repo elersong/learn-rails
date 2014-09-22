@@ -8,11 +8,6 @@ Basic Stats:
 
 * Ruby version: 2.0.0p481
 
-* System dependencies: Unkown
+* Development System: Mac OSX 10.6.8 
 
-* Configuration: Unknown
-
-* Database creation: 22 Sep 2014
-
-* Database initialization: 22 Sep 2014
-
+* No database
