@@ -1,8 +1,8 @@
-Learn-Rails README
+Learn-Rails: Birthday Countdown README
 ------------------
 
 Working through the Learn-Rails book that accompanies the RailsApp Project. 
-Rails application #1
+Rails application #1: Birthday Countdown
 
 Basic Stats:
 
