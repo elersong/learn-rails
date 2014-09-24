@@ -11,4 +11,4 @@ Basic Stats:
 
 * Development System: Mac OSX 10.6.8 
 
-* No database
+* No database (technically), but the app leverages Google Drive Spreadsheets to hold contact info input by the visitor

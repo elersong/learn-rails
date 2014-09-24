@@ -13,4 +13,20 @@ class Contact < ActiveRecord::Base
   
   validates_length_of :content, :maximum => 500
   
+  def update_spreadsheet
+    #these constants get defined in config/application.yml thanks to the figaro gem
+    connection = GoogleDrive.login(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"]) 
+    ss = connection.spreadsheet_by_title("Learn Rails Birthday App Example")
+    if ss.nil?
+      ss = connection.create_spreadsheet("Learn Rails Birthday App Example")
+    end
+    ws = ss.worksheets[0]
+    last_row = 1 + ws.num_rows
+    ws[last_row,1] = Time.new
+    ws[last_row,2] = self.name
+    ws[last_row,3] = self.email
+    ws[last_row,4] = self.content 
+    ws.save
+  end
+  
 end
