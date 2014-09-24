@@ -7,8 +7,10 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(secure_params)
     if @contact.valid?
+      # add the message to the google spreadsheet
       @contact.update_spreadsheet
-      #TODO send message
+      # send the app owner an email containing the message from the app
+      UserMailer.contact_email(@contact).deliver
       flash[:notice] = "Message sent from #{@contact.name}"
       redirect_to root_path
     else
