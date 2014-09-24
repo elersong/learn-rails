@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'visitors#new'
   resources :contacts, only: [:new, :create]
+  resources :visitors, only: [:new, :create]
+  root to: 'visitors#new'
   
   # get '/pages/*id', to: 'pages#show' #{redundant code because the high_voltage gem routes by default}
 

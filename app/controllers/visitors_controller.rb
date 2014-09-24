@@ -1,10 +1,24 @@
 class VisitorsController < ApplicationController
   
-  def new
-    @owner = Owner.new
-    #render 'visitors/new' # this code is redundant, but shows how the relationship works
-    #flash.now[:notice] = "Welcome!"
-    #flash.now[:alert] = "My birthday is soon!"
+  def new 
+    @visitor = Visitor.new
   end
   
-end 
+  def create
+     @visitor = Visitor.new(secure_params)
+     if @visitor.valid?
+        @visitor.subscribe
+        flash[:notice] = "Signed up #{@visitor.email}." 
+        redirect_to root_path
+     else 
+       render :new
+     end 
+  end
+  
+private
+
+  def secure_params
+    params.require(:visitor).permit(:email)
+  end 
+
+end
