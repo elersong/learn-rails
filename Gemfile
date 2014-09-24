@@ -19,6 +19,7 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'compass-rails'
 gem 'zurb-foundation'
+gem 'newrelic_rpm'
 
 group :development do # Specifying a group for development ensures these won't be included in production
   gem 'better_errors'
